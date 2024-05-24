@@ -5,7 +5,6 @@ from PyQt5 import QtGui
 import os
 
 
-# Определение класса приложения ToDoListApp
 class ToDoListApp(QtWidgets.QMainWindow):
     def SetupUI(self):
         # Установка стилей для приложения
@@ -75,8 +74,6 @@ APP = QtWidgets.QApplication([])
 # Создание главного окна приложения и его настройка
 Window = ToDoListApp()
 Window.SetupUI()
-# Установка иконки окна с использованием пути к иконке
-Window.setWindowIcon(QtGui.QIcon(os.path.join(os.getcwd(), 'ICONS', 'ToDoListIcon.ico')))
 # Отображение главного окна
 Window.show()
 # Запуск цикла обработки событий приложения
