@@ -2,7 +2,6 @@ from bs4 import BeautifulSoup as bs4
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtGui import QIcon
 from requests import *
-import os
   
   
 class WeatherApp(QtWidgets.QMainWindow):  
