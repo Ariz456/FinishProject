@@ -1,5 +1,7 @@
 from PyQt5 import QtCore, QtWidgets
+from PyQt5.QtWinExtras import QtWin
 from PyQt5.QtGui import QIcon
+from PyQt5 import QtGui
 import os
 
 
@@ -21,6 +23,7 @@ class Apps(QtWidgets.QMainWindow):
         self.APPSButton.clicked.connect(self.RunAPPS)
         self.WeatherButton.clicked.connect(self.RunWeatherApp)
         self.TimeButton.clicked.connect(self.RunTimeApp)
+        QtWin.setCurrentProcessExplicitAppUserModelID('324673567')
         self.setWindowTitle('SelectApps')
         self.resize(290, 130)
 
@@ -37,5 +40,6 @@ class Apps(QtWidgets.QMainWindow):
 APP = QtWidgets.QApplication([])
 Window = Apps()
 Window.SetupUI()
+Window.setWindowIcon(QtGui.QIcon('D:\\Test\\SelectIcon.ico'))
 Window.show()
 APP.exec_()

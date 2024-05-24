@@ -1,6 +1,5 @@
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtGui import QIcon
-import os
 
 
 class ToDoListApp(QtWidgets.QMainWindow):

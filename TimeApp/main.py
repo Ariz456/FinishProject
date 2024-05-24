@@ -1,6 +1,8 @@
 from PyQt5.QtWidgets import QLabel, QApplication
 from PyQt5.QtCore import QTimer, QRect
+from PyQt5.QtWinExtras import QtWin
 from PyQt5 import QtWidgets
+from PyQt5 import QtGui
 import datetime
 
 
@@ -12,8 +14,9 @@ class TimeApp(QtWidgets.QMainWindow):
         self.Timer = QTimer(self)
         self.Timer.timeout.connect(self.UpdateTime)
         self.Timer.start(1000)
-        self.resize(1200, 300)
+        QtWin.setCurrentProcessExplicitAppUserModelID('324673567')
         self.setWindowTitle('TimeApp')
+        self.resize(1200, 300)
 
     def UpdateTime(self):
         self.TimeLabel.setText(datetime.datetime.now().strftime('%H:%M:%S'))
@@ -22,5 +25,6 @@ class TimeApp(QtWidgets.QMainWindow):
 APP = QtWidgets.QApplication([])
 Window = TimeApp()
 Window.SetupUI()
+Window.setWindowIcon(QtGui.QIcon('D:\\Test\\SelectIcon.ico'))
 Window.show()
 APP.exec_()

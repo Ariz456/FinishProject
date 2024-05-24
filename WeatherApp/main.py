@@ -1,9 +1,11 @@
 from bs4 import BeautifulSoup as bs4
+from PyQt5.QtWinExtras import QtWin
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtGui import QIcon
+from PyQt5 import QtGui
 from requests import *
-  
-  
+
+
 class WeatherApp(QtWidgets.QMainWindow):  
     def SetupUI(self):  
         self.setStyleSheet('font-family: MV Boli; font-weight: bold; font-size: 20px; letter-spacing: -1px;')
@@ -19,10 +21,11 @@ class WeatherApp(QtWidgets.QMainWindow):
         self.Humiditylabel = QtWidgets.QLabel(self)  
         self.Humiditylabel.setGeometry(QtCore.QRect(270, 85, 250, 25))  
         self.Visibilitylabel = QtWidgets.QLabel(self)  
-        self.Visibilitylabel.setGeometry(QtCore.QRect(10, 120, 250, 25))  
-        self.setWindowTitle('WeatherApp')  
-        self.resize(500, 160)  
-  
+        self.Visibilitylabel.setGeometry(QtCore.QRect(10, 120, 250, 25))
+        QtWin.setCurrentProcessExplicitAppUserModelID('324673567')
+        self.setWindowTitle('WeatherApp')
+        self.resize(500, 160)
+
     def SearchWeather(self):
         Response = get('https://weather.com/ru-KG/weather/today/l/KGXX0001').content
         Soup = bs4(Response, "html.parser")
@@ -45,5 +48,6 @@ APP = QtWidgets.QApplication([])
 Window = WeatherApp()
 Window.SetupUI()
 Window.SearchWeather()
+Window.setWindowIcon(QtGui.QIcon('D:\\Test\\SelectIcon.ico'))
 Window.show()
 APP.exec_()

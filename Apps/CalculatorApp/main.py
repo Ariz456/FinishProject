@@ -1,12 +1,10 @@
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtGui import QIcon
-import os
 
 
 class CalculatorApp(QtWidgets.QMainWindow):
     def SetupUI(self):
         self.setStyleSheet('font-family: MV Boli; font-weight: bold; font-size: 20px; letter-spacing: -1px; background-color: rgb(15, 15, 15);')
-        self.setWindowIcon(QIcon(os.path.join(os.path.dirname(os.getcwd()), 'ICONS', 'CalculatorIcon.ico')))
         self.CentralWidget = QtWidgets.QWidget(self)
         self.Layout_1 = QtWidgets.QGridLayout()
         self.Layout_2 = QtWidgets.QGridLayout(self.CentralWidget)
