@@ -6,33 +6,32 @@ import os
 class Apps(QtWidgets.QMainWindow):
     def SetupUI(self):
         self.setStyleSheet('font-family: MV Boli; font-weight: bold; font-size: 20px; letter-spacing: -1px;')
-        self.setWindowIcon(QIcon(os.path.join(os.path.dirname(os.getcwd()), 'ICONS', 'SelectIcon.ico')))
         self.StartLabel = QtWidgets.QLabel(self)
         self.StartLabel.setText('Hello please select App :)')
         self.StartLabel.setGeometry(QtCore.QRect(3, 5, 275, 35))
-        self.APPSButton = QtWidgets.QPushButton(self)
-        self.APPSButton.setText('APPS')
-        self.APPSButton.setGeometry(QtCore.QRect(80, 43, 95, 30))
+        self.LalafoButton = QtWidgets.QPushButton(self)
+        self.LalafoButton.setText('Lalafo')
+        self.LalafoButton.setGeometry(QtCore.QRect(80, 43, 95, 30))
         self.CalculatorButton = QtWidgets.QPushButton(self)
         self.CalculatorButton.setText('Calculator')
         self.CalculatorButton.setGeometry(QtCore.QRect(5, 90, 120, 30))
-        self.WeatherButton = QtWidgets.QPushButton(self)
-        self.WeatherButton.setText('Weather')
-        self.WeatherButton.setGeometry(QtCore.QRect(150, 90, 120, 30))
-        self.APPSButton.clicked.connect(self.RunAPPS)
+        self.ToDoListButton = QtWidgets.QPushButton(self)
+        self.ToDoListButton.setText('ToDoList')
+        self.ToDoListButton.setGeometry(QtCore.QRect(150, 90, 120, 30))
+        self.LalafoButton.clicked.connect(self.RunLalafoApp)
         self.CalculatorButton.clicked.connect(self.RunCalculatorApp)
-        self.WeatherButton.clicked.connect(self.RunWeatherApp)
+        self.ToDoListButton.clicked.connect(self.RunToDoListApp)
         self.setWindowTitle('SelectApps')
         self.resize(290, 130)
 
-    def RunWeatherApp(self):
-        os.system('python ' + os.path.join(os.getcwd(), 'WeatherApp\\main.py'))
+    def RunLalafoApp(self):
+        os.system('python ' + os.path.join(os.getcwd(), 'APPS\\LalafoApp\\main.py'))
 
     def RunCalculatorApp(self):
-        os.system('python ' + os.path.join(os.getcwd(), 'CalculatorApp\\main.py'))
+        os.system('python ' + os.path.join(os.getcwd(), 'APPS\\CalculatorApp\\main.py'))
 
-    def RunAPPS(self):
-        os.system('python ' + os.path.join(os.getcwd(), 'APPS\\main.py'))
+    def RunToDoListApp(self):
+        os.system('python ' + os.path.join(os.getcwd(), 'APPS\\ToDoListApp\\main.py'))
 
 
 APP = QtWidgets.QApplication([])

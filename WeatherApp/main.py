@@ -8,7 +8,6 @@ import os
 class WeatherApp(QtWidgets.QMainWindow):  
     def SetupUI(self):  
         self.setStyleSheet('font-family: MV Boli; font-weight: bold; font-size: 20px; letter-spacing: -1px;')
-        self.setWindowIcon(QIcon(os.path.join(os.path.dirname(os.getcwd()), 'ICONS', 'WeatherIcon.ico')))
         self.StartLabel = QtWidgets.QLabel(self)  
         self.StartLabel.setText('Hello in app you will learn about the weather :)')  
         self.StartLabel.setGeometry(QtCore.QRect(10, 10, 480, 25))  

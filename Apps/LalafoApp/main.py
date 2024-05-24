@@ -12,7 +12,6 @@ import os
 class LalafoApp(QtWidgets.QMainWindow):
     def SetupUI(self):
         self.setStyleSheet('font-family: MV Boli; font-weight: bold; font-size: 20px; letter-spacing: -1px;')
-        self.setWindowIcon(QIcon(os.path.join(os.path.dirname(os.getcwd()), 'ICONS', 'LalafoIcon.ico')))
         self.StartImage = QtWidgets.QLabel(self)
         self.StartImage.setPixmap(QtGui.QPixmap(os.path.join(os.getcwd(), 'APPS\\LalafoApp\\Image.png')))
         self.StartImage.setGeometry(QtCore.QRect(10, 10, 150, 150))

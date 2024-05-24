@@ -6,7 +6,6 @@ import os
 class ToDoListApp(QtWidgets.QMainWindow):
     def SetupUI(self):
         self.setStyleSheet('font-family: MV Boli; font-weight: bold; font-size: 20px; letter-spacing: -1px;')
-        self.setWindowIcon(QIcon(os.path.join(os.path.dirname(os.getcwd()), 'ICONS', 'ToDoListIcon.ico')))
         self.StartLabel = QtWidgets.QLabel(self)
         self.StartLabel.setText('My ToDo list:')
         self.StartLabel.setGeometry(QtCore.QRect(103, 10, 170, 33))
