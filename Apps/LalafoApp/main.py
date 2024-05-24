@@ -116,8 +116,6 @@ APP = QtWidgets.QApplication([])
 # Создание главного окна приложения и его настройка
 Window = LalafoApp()
 Window.SetupUI()
-# Установка иконки окна с использованием пути к иконке
-Window.setWindowIcon(QtGui.QIcon(os.path.join(os.getcwd(), 'ICONS', 'LalafoIcon.ico')))
 # Отображение главного окна
 Window.show()
 # Запуск цикла обработки событий приложения

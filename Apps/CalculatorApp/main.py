@@ -84,8 +84,6 @@ APP = QtWidgets.QApplication([])
 # Создание главного окна приложения и его настройка
 Window = CalculatorApp()
 Window.SetupUI()
-# Установка иконки окна с использованием пути к иконке
-Window.setWindowIcon(QtGui.QIcon(os.path.join(os.getcwd(), 'ICONS', 'CalculatorIcon.ico')))
 # Отображение главного окна
 Window.show()
 # Запуск цикла обработки событий приложения
