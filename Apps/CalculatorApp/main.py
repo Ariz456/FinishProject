@@ -1,5 +1,8 @@
 from PyQt5 import QtCore, QtWidgets
+from PyQt5.QtWinExtras import QtWin
 from PyQt5.QtGui import QIcon
+from PyQt5 import QtGui
+import os
 
 
 class CalculatorApp(QtWidgets.QMainWindow):
@@ -21,6 +24,7 @@ class CalculatorApp(QtWidgets.QMainWindow):
         self.Layout_1.addWidget(self.InputLabel, 0, 0, 1, 4)
         self.Layout_2.addLayout(self.Layout_1, 0, 0, 1, 1)
         self.setCentralWidget(self.CentralWidget)
+        QtWin.setCurrentProcessExplicitAppUserModelID('324673567')
         self.setWindowTitle('CalculatorApp')
         self.resize(340, 475)
 
@@ -58,5 +62,6 @@ class CalculatorApp(QtWidgets.QMainWindow):
 APP = QtWidgets.QApplication([])
 Window = CalculatorApp()
 Window.SetupUI()
+Window.setWindowIcon(QtGui.QIcon(os.path.join(os.getcwd(), 'ICONS', 'CalculatorIcon.ico')))
 Window.show()
 APP.exec_()

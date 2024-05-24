@@ -1,5 +1,8 @@
 from PyQt5 import QtCore, QtWidgets
+from PyQt5.QtWinExtras import QtWin
 from PyQt5.QtGui import QIcon
+from PyQt5 import QtGui
+import os
 
 
 class ToDoListApp(QtWidgets.QMainWindow):
@@ -22,13 +25,13 @@ class ToDoListApp(QtWidgets.QMainWindow):
         self.UnCheckButton = QtWidgets.QPushButton(self)
         self.UnCheckButton.setText('UnCheck All')
         self.UnCheckButton.setGeometry(QtCore.QRect(455, 220, 170, 50))
-        self.setWindowTitle('ToDoListApp')
-        self.resize(640, 450)
-
         self.AddButton.clicked.connect(self.AddTask)
         self.DeleteButton.clicked.connect(self.DeleteTask)
         self.CheckButton.clicked.connect(self.CheckAllTasks)
         self.UnCheckButton.clicked.connect(self.UnCheckAllTasks)
+        QtWin.setCurrentProcessExplicitAppUserModelID('324673567')
+        self.setWindowTitle('ToDoListApp')
+        self.resize(640, 450)
 
     def AddTask(self):
         TaskText, ok = QtWidgets.QInputDialog.getText(self, 'Add Task', 'Enter task:')
@@ -54,5 +57,6 @@ class ToDoListApp(QtWidgets.QMainWindow):
 APP = QtWidgets.QApplication([])
 Window = ToDoListApp()
 Window.SetupUI()
+Window.setWindowIcon(QtGui.QIcon(os.path.join(os.getcwd(), 'ICONS', 'ToDoListIcon.ico')))
 Window.show()
 APP.exec_()
