@@ -94,7 +94,8 @@ class LalafoApp(QtWidgets.QMainWindow):
 
 
 APP = QtWidgets.QApplication([])
-Window = LalafoApp()
+Window = CalculatorApp()
 Window.SetupUI()
+Window.setWindowIcon(QtGui.QIcon(os.path.join(os.getcwd(), 'ICONS', 'LalafoIcon.ico')))
 Window.show()
 APP.exec_()
