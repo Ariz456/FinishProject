@@ -4,11 +4,13 @@ from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtGui import QIcon
 from PyQt5 import QtGui
 from requests import *
+import os
 
 
 class WeatherApp(QtWidgets.QMainWindow):  
-    def SetupUI(self):  
+    def SetupUI(self):
         self.setStyleSheet('font-family: MV Boli; font-weight: bold; font-size: 20px; letter-spacing: -1px;')
+        self.setWindowIcon(QtGui.QIcon('D:\\FinishProject\\ICONS\\WeatherIcon.ico'))
         self.StartLabel = QtWidgets.QLabel(self)  
         self.StartLabel.setText('Hello in app you will learn about the weather :)')  
         self.StartLabel.setGeometry(QtCore.QRect(10, 10, 480, 25))  
@@ -43,11 +45,10 @@ class WeatherApp(QtWidgets.QMainWindow):
         self.Humiditylabel.setText('Humidity: ' + Humidity)
         self.Visibilitylabel.setText('Visibility: ' + Visibility)
   
-  
+
 APP = QtWidgets.QApplication([])
 Window = WeatherApp()
 Window.SetupUI()
 Window.SearchWeather()
-Window.setWindowIcon(QtGui.QIcon('D:\\Test\\SelectIcon.ico'))
 Window.show()
 APP.exec_()

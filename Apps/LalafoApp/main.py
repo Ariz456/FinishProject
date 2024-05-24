@@ -1,6 +1,8 @@
 from PyQt5.QtWidgets import QCalendarWidget
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWinExtras import QtWin
 from PyQt5.QtGui import QIcon
+from PyQt5 import QtGui
 from time import sleep
 from random import *
 import configparser
@@ -12,6 +14,7 @@ import os
 class LalafoApp(QtWidgets.QMainWindow):
     def SetupUI(self):
         self.setStyleSheet('font-family: MV Boli; font-weight: bold; font-size: 20px; letter-spacing: -1px;')
+        self.setWindowIcon(QtGui.QIcon('D:\\FinishProject\\ICONS\\LalafoIcon.ico'))
         self.StartImage = QtWidgets.QLabel(self)
         self.StartImage.setPixmap(QtGui.QPixmap(os.path.join(os.getcwd(), 'APPS\\LalafoApp\\Image.png')))
         self.StartImage.setGeometry(QtCore.QRect(10, 10, 150, 150))
@@ -31,6 +34,7 @@ class LalafoApp(QtWidgets.QMainWindow):
         self.StartButton.clicked.connect(self.GetStartProcess)
         self.CalendarButton.clicked.connect(self.GetOpenCalendar)
         self.TimeButton.clicked.connect(self.RunTimeApp)
+        QtWin.setCurrentProcessExplicitAppUserModelID('324673567')
         self.setWindowTitle('LalafoApp')
         self.resize(280, 200)
 

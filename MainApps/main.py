@@ -8,6 +8,7 @@ import os
 class Apps(QtWidgets.QMainWindow):
     def SetupUI(self):
         self.setStyleSheet('font-family: MV Boli; font-weight: bold; font-size: 20px; letter-spacing: -1px;')
+        self.setWindowIcon(QtGui.QIcon('D:\\FinishProject\\ICONS\\SelectIcon.ico'))
         self.StartLabel = QtWidgets.QLabel(self)
         self.StartLabel.setText('Hello please select App :)')
         self.StartLabel.setGeometry(QtCore.QRect(3, 5, 275, 35))
@@ -40,6 +41,5 @@ class Apps(QtWidgets.QMainWindow):
 APP = QtWidgets.QApplication([])
 Window = Apps()
 Window.SetupUI()
-Window.setWindowIcon(QtGui.QIcon('D:\\Test\\SelectIcon.ico'))
 Window.show()
 APP.exec_()
